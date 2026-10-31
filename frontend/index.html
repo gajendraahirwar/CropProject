@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crop Recommendation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>AI-Based Crop Recommendation System</h1>
+    <p>Enter your soil and weather details to find the best crop</p>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>Soil and weather details</h2>
+      <form id="crop-form">
+        <div class="grid">
+          <label>Nitrogen (N)
+            <input type="number" name="N" min="0" max="200" step="any" value="90" required>
+          </label>
+          <label>Phosphorus (P)
+            <input type="number" name="P" min="0" max="200" step="any" value="42" required>
+          </label>
+          <label>Potassium (K)
+            <input type="number" name="K" min="0" max="200" step="any" value="43" required>
+          </label>
+          <label>Temperature (°C)
+            <input type="number" name="temperature" min="0" max="60" step="any" value="25" required>
+          </label>
+          <label>Humidity (%)
+            <input type="number" name="humidity" min="0" max="100" step="any" value="80" required>
+          </label>
+          <label>Soil pH
+            <input type="number" name="ph" min="0" max="14" step="any" value="6.5" required>
+          </label>
+          <label>Rainfall (mm)
+            <input type="number" name="rainfall" min="0" max="500" step="any" value="200" required>
+          </label>
+        </div>
+        <button type="submit" id="predict-btn">Predict Best Crop</button>
+      </form>
+    </section>
+
+    <section class="card result" id="result" aria-live="polite">
+      <h2>Recommendation</h2>
+      <p id="placeholder">Fill in the values and press Predict.</p>
+      <div id="output" hidden>
+        <p class="small">Recommended crop</p>
+        <p class="crop" id="crop-name"></p>
+        <p class="small">Other close matches</p>
+        <ul id="top-list"></ul>
+      </div>
+      <p class="error" id="error" hidden></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

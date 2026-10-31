@@ -1,0 +1,87 @@
+:root {
+  --green: #15573c;
+  --green-light: #e8f5e9;
+  --green-mid: #66a36b;
+  --text: #1f2a24;
+  --muted: #5f6b64;
+  --border: #d5ddd7;
+  --bg: #f4f7f5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.top {
+  background: var(--green);
+  color: #fff;
+  padding: 28px 20px;
+  text-align: center;
+}
+.top h1 { margin: 0 0 6px; font-size: 1.6rem; }
+.top p { margin: 0; opacity: 0.85; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+}
+.card h2 { margin: 0 0 16px; font-size: 1.15rem; color: var(--green); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; font-weight: 600; }
+input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+input:focus { outline: 2px solid var(--green-mid); border-color: transparent; }
+
+button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--green);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: #0f4330; }
+button:disabled { opacity: 0.6; cursor: wait; }
+
+.result { background: var(--green-light); }
+.small { margin: 0; font-size: 0.85rem; color: var(--muted); }
+.crop { margin: 4px 0 16px; font-size: 2.2rem; font-weight: 700; color: var(--green); text-transform: capitalize; }
+.error { color: #b3261e; font-weight: 600; }
+
+#top-list { list-style: none; margin: 8px 0 0; padding: 0; }
+#top-list li { margin-bottom: 10px; font-size: 0.95rem; text-transform: capitalize; }
+.bar { height: 8px; background: #fff; border-radius: 6px; margin-top: 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--green-mid); }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+}
